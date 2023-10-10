@@ -12,6 +12,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class MemberService {
 	private final MemberRepository memberRepository;
+	private final int id = 1;
 
 	public void save(MemberDto memberDto) {
 		MemberEntity memberEntity = MemberEntity.toMemberEntity(memberDto);
