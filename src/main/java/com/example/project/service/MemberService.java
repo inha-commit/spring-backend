@@ -11,11 +11,11 @@ import lombok.RequiredArgsConstructor;
 @Service
 @RequiredArgsConstructor
 public class MemberService {
-	private final MemberRepository memberRepository;
-	private final int id = 1;
+    private final MemberRepository memberRepository;
+    private final int id = 1;
 
-	public void save(MemberDto memberDto) {
-		MemberEntity memberEntity = MemberEntity.toMemberEntity(memberDto);
-		memberRepository.save(memberEntity);
-	}
+    public void save(MemberDto memberDto) {
+        MemberEntity memberEntity = MemberEntity.toMemberEntity(memberDto);
+        memberRepository.save(memberEntity);
+    }
 }

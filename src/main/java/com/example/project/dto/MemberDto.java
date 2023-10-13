@@ -12,18 +12,18 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 public class MemberDto {
-	private Long id;
-	private String memberEmail;
-	private String memberPassword;
-	private String memberName;
+    private Long id;
+    private String memberEmail;
+    private String memberPassword;
+    private String memberName;
 
-	public static MemberDto toMemberDto(MemberEntity memberEntity) {
-		MemberDto memberDto = new MemberDto();
-		memberDto.setId(memberEntity.getId());
-		memberDto.setMemberEmail(memberEntity.getMemberEmail());
-		memberDto.setMemberName(memberEntity.getMemberName());
-		memberDto.setMemberPassword(memberEntity.getMemberPassword());
+    public static MemberDto toMemberDto(MemberEntity memberEntity) {
+        MemberDto memberDto = new MemberDto();
+        memberDto.setId(memberEntity.getId());
+        memberDto.setMemberEmail(memberEntity.getMemberEmail());
+        memberDto.setMemberName(memberEntity.getMemberName());
+        memberDto.setMemberPassword(memberEntity.getMemberPassword());
 
-		return memberDto;
-	}
+        return memberDto;
+    }
 }

@@ -13,19 +13,19 @@ import lombok.RequiredArgsConstructor;
 @Controller
 @RequiredArgsConstructor
 public class MemberController {
-	private final MemberService memberService;
+    private final MemberService memberService;
 
-	@GetMapping("/project/save")
-	public String saveForm() {
-		return "save";
-	}
+    @GetMapping("/project/save")
+    public String saveForm() {
+        return "save";
+    }
 
-	@PostMapping("/project/save")
-	public String save(@ModelAttribute MemberDto memberDto) {
-		System.out.println("MemberController.save");
-		System.out.println("memberDTO = " + memberDto);
-		memberService.save(memberDto);
+    @PostMapping("/project/save")
+    public String save(@ModelAttribute MemberDto memberDto) {
+        System.out.println("MemberController.save");
+        System.out.println("memberDTO = " + memberDto);
+        memberService.save(memberDto);
 
-		return "index";
-	}
+        return "index";
+    }
 }
