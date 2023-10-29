@@ -6,8 +6,11 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
 
 @Entity
+@NoArgsConstructor
 @Table(name = "User")
 public class UserEntity extends BaseEntity {
 
@@ -30,6 +33,24 @@ public class UserEntity extends BaseEntity {
     private String fcmId;
 
     private Boolean alarm = true;
+
+    @Builder
+    public UserEntity(
+            Long id,
+            String snsId,
+            String nickname,
+            String birthday,
+            String profileImgSrc,
+            String fcmId,
+            Boolean alarm) {
+        this.id = id;
+        this.snsId = snsId;
+        this.nickname = nickname;
+        this.birthday = birthday;
+        this.profileImgSrc = profileImgSrc;
+        this.fcmId = fcmId;
+        this.alarm = alarm;
+    }
 
     /*
     @Temporal(TemporalType.TIMESTAMP)
