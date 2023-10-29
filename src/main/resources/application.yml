@@ -1,12 +1,17 @@
 spring:
-  profiles:
-    active: mysql
+  datasource:
+    url: ${URL}
+    username: ${ID}
+    password: ${PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  thymeleaf:
+    cache:false
+  jpa:
+    open-in-view: true
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    properties:
+      hibernate.format_sql: true
+      dialect: org.hibernate.dialect.MYSQL8INNODBDialect
 
-jpa:
-  open-in-view: true
-  show-sql: true
-  hibernate:
-    ddl-auto: create
-  properties:
-    hibernate.format_sql: true
-    dialect: org.hibernate.dialect.MYSQL8INNODBDialect
