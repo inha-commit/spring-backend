@@ -1,5 +1,8 @@
 package com.example.project.domain.entity;
 
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,6 +15,8 @@ import lombok.NoArgsConstructor;
 @Entity
 @NoArgsConstructor
 @Table(name = "User")
+@Where(clause = "deleted_at IS NULL")
+@SQLDelete(sql = "UPDATE User SET deletedAt = CURRENT_TIMESTAMP where id = ?")
 public class UserEntity extends BaseEntity {
 
     @Id

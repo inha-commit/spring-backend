@@ -12,7 +12,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "Funding")
-@Where(clause = "deleted_at IS NULL")
+@Where(clause = "deletedAt IS NULL")
 @SQLDelete(sql = "UPDATE Funding SET deleted_at = CURRENT_TIMESTAMP where id = ?")
 public class FundingEntity extends BaseEntity {
 
