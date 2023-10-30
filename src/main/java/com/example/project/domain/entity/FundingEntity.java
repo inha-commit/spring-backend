@@ -18,7 +18,7 @@ public class FundingEntity extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Column private int cost;
 

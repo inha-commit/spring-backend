@@ -73,7 +73,7 @@ public class UserEntity extends BaseEntity {
     @ManyToMany(mappedBy = "followers")
     private List<UserEntity> followings;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user",cascade=CascadeType.ALL)
     private List<PresentEntity> presents;
 
     @OneToMany(mappedBy = "sender")
